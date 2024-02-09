@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CEAB00042B7338E1004DA6E6 /* ProfileModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB00032B7338E1004DA6E6 /* ProfileModels.swift */; };
 		CEABFFF62B73388A004DA6E6 /* TestProfileAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABFFF52B73388A004DA6E6 /* TestProfileAppApp.swift */; };
 		CEABFFF82B73388A004DA6E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABFFF72B73388A004DA6E6 /* ContentView.swift */; };
 		CEABFFFA2B73388B004DA6E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEABFFF92B73388B004DA6E6 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CEAB00032B7338E1004DA6E6 /* ProfileModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModels.swift; sourceTree = "<group>"; };
 		CEABFFF22B733889004DA6E6 /* TestProfileApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestProfileApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEABFFF52B73388A004DA6E6 /* TestProfileAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestProfileAppApp.swift; sourceTree = "<group>"; };
 		CEABFFF72B73388A004DA6E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 				CEABFFF72B73388A004DA6E6 /* ContentView.swift */,
 				CEABFFF92B73388B004DA6E6 /* Assets.xcassets */,
 				CEABFFFB2B73388B004DA6E6 /* Preview Content */,
+				CEAB00032B7338E1004DA6E6 /* ProfileModels.swift */,
 			);
 			path = TestProfileApp;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEAB00042B7338E1004DA6E6 /* ProfileModels.swift in Sources */,
 				CEABFFF82B73388A004DA6E6 /* ContentView.swift in Sources */,
 				CEABFFF62B73388A004DA6E6 /* TestProfileAppApp.swift in Sources */,
 			);
