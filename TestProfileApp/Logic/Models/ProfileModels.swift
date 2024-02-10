@@ -150,3 +150,14 @@ final class DataPreview {
         ISO8601DateFormatter().date(from: dateString)!
     }
 }
+
+
+
+
+
+final class ProfileData: ObservableObject {
+    @Published var organization = DataPreview.organization
+    @Published var user = DataPreview.user
+    @Published var userSessions = DataPreview.userSessions
+    @Published var organizationMembers = DataPreview.organizationMembers
+}
