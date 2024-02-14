@@ -12,6 +12,9 @@ struct MembersView: View {
     
     @ObservedObject var profileData: ProfileData
     
+    @State private var isLoading = false
+    @State private var showError = false
+    
     @State private var selectedMemberType: Int = 0
     @State private var searchText: String = ""
     
@@ -48,33 +51,39 @@ struct MembersView: View {
     
     
     var body: some View {
-        List {
-            Picker("Members", selection: $selectedMemberType) {
-                Text("All").tag(0)
-                Text("Invited").tag(1)
-            }
-            .pickerStyle(SegmentedPickerStyle())
-            .padding(.horizontal, -20)
-            .padding(.vertical, -20)
-            .listRowBackground(Color.clear)
-            
-            Section(header: Text(membersSectionHeader)) {
-                ForEach(0..<filteredMembers.count, id: \.self) { index in
-                    let organizationMember = filteredMembers[index]
-                    NavigationLink(destination: MemberDetailView(index: index, profileData: profileData)) {
-                        VStack(alignment: .leading, spacing: 2) {
-                            Text(organizationMember.name)
-                                .foregroundStyle(Color(.label))
-                                .font(.system(size: 18, weight: .semibold))
-                            Text(OrgRole.uiName(for: organizationMember.role))
-                                .foregroundStyle(Color(.label))
-                                .font(.system(size: 15, weight: .regular))
-                            Text(organizationMember.email)
-                                .foregroundStyle(Color(.secondaryLabel))
-                                .font(.system(size: 15, weight: .regular))
+        ZStack {
+            if isLoading {
+                BaseLoadingView()
+            } else {
+                List {
+                    Picker("Members", selection: $selectedMemberType) {
+                        Text("All").tag(0)
+                        Text("Invited").tag(1)
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                    .padding(.horizontal, -20)
+                    .padding(.vertical, -20)
+                    .listRowBackground(Color.clear)
+                    
+                    Section(header: Text(membersSectionHeader)) {
+                        ForEach(0..<filteredMembers.count, id: \.self) { index in
+                            let organizationMember = filteredMembers[index]
+                            NavigationLink(destination: MemberDetailView(index: index, profileData: profileData)) {
+                                VStack(alignment: .leading, spacing: 2) {
+                                    Text(organizationMember.name)
+                                        .foregroundStyle(Color(.label))
+                                        .font(.system(size: 18, weight: .semibold))
+                                    Text(OrgRole.uiName(for: organizationMember.role))
+                                        .foregroundStyle(Color(.label))
+                                        .font(.system(size: 15, weight: .regular))
+                                    Text(organizationMember.email)
+                                        .foregroundStyle(Color(.secondaryLabel))
+                                        .font(.system(size: 15, weight: .regular))
+                                }
+                            }
+                            .tag(index)
                         }
                     }
-                    .tag(index)
                 }
             }
         }
@@ -96,5 +105,29 @@ struct MembersView: View {
             InviteMemberView()
         }
         .searchable(text: $searchText, placement: .navigationBarDrawer, prompt: "Search Members")
+        .onAppear(perform: loadData)
     }
+    
+    func loadData() {
+        withAnimation {
+            let success = true
+            
+            //MARK: - Load API Data on Appear
+            
+            isLoading = true
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                isLoading = false
+                if !success {
+                    showError = true
+                }
+            }
+        }
+    }
+}
+
+
+
+#Preview {
+    MembersView(profileData: ProfileData())
 }

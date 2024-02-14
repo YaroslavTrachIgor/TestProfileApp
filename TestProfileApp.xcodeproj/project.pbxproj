@@ -14,6 +14,8 @@
 		CEAB00262B76CCB3004DA6E6 /* MembersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB00252B76CCB3004DA6E6 /* MembersView.swift */; };
 		CEAB00282B76CCE4004DA6E6 /* InviteMemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB00272B76CCE4004DA6E6 /* InviteMemberView.swift */; };
 		CEAB002A2B76CCFE004DA6E6 /* MemberDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB00292B76CCFE004DA6E6 /* MemberDetailView.swift */; };
+		CEAB00552B7C4617004DA6E6 /* BaseLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB00542B7C4617004DA6E6 /* BaseLoadingView.swift */; };
+		CEAB00572B7C4AEF004DA6E6 /* AlertButtonTintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB00562B7C4AEF004DA6E6 /* AlertButtonTintColor.swift */; };
 		CEABFFF62B73388A004DA6E6 /* TestProfileAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABFFF52B73388A004DA6E6 /* TestProfileAppApp.swift */; };
 		CEABFFF82B73388A004DA6E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABFFF72B73388A004DA6E6 /* ContentView.swift */; };
 		CEABFFFA2B73388B004DA6E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEABFFF92B73388B004DA6E6 /* Assets.xcassets */; };
@@ -28,6 +30,8 @@
 		CEAB00252B76CCB3004DA6E6 /* MembersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersView.swift; sourceTree = "<group>"; };
 		CEAB00272B76CCE4004DA6E6 /* InviteMemberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteMemberView.swift; sourceTree = "<group>"; };
 		CEAB00292B76CCFE004DA6E6 /* MemberDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDetailView.swift; sourceTree = "<group>"; };
+		CEAB00542B7C4617004DA6E6 /* BaseLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLoadingView.swift; sourceTree = "<group>"; };
+		CEAB00562B7C4AEF004DA6E6 /* AlertButtonTintColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertButtonTintColor.swift; sourceTree = "<group>"; };
 		CEABFFF22B733889004DA6E6 /* TestProfileApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestProfileApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEABFFF52B73388A004DA6E6 /* TestProfileAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestProfileAppApp.swift; sourceTree = "<group>"; };
 		CEABFFF72B73388A004DA6E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -123,6 +127,15 @@
 			path = Account;
 			sourceTree = "<group>";
 		};
+		CEAB00532B7C460B004DA6E6 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CEAB00542B7C4617004DA6E6 /* BaseLoadingView.swift */,
+				CEAB00562B7C4AEF004DA6E6 /* AlertButtonTintColor.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		CEABFFE92B733889004DA6E6 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +157,7 @@
 			children = (
 				CEABFFF52B73388A004DA6E6 /* TestProfileAppApp.swift */,
 				CEABFFF72B73388A004DA6E6 /* ContentView.swift */,
+				CEAB00532B7C460B004DA6E6 /* Common */,
 				CEAB00172B76CADC004DA6E6 /* Modules */,
 				CEAB00162B76CAD5004DA6E6 /* Logic */,
 				CEABFFF92B73388B004DA6E6 /* Assets.xcassets */,
@@ -232,6 +246,7 @@
 			files = (
 				CEAB001F2B76CC2B004DA6E6 /* UserMenuView.swift in Sources */,
 				CEAB00242B76CC82004DA6E6 /* OrganizationView.swift in Sources */,
+				CEAB00552B7C4617004DA6E6 /* BaseLoadingView.swift in Sources */,
 				CEAB00042B7338E1004DA6E6 /* ProfileModels.swift in Sources */,
 				CEAB00282B76CCE4004DA6E6 /* InviteMemberView.swift in Sources */,
 				CEAB00262B76CCB3004DA6E6 /* MembersView.swift in Sources */,
@@ -239,6 +254,7 @@
 				CEAB002A2B76CCFE004DA6E6 /* MemberDetailView.swift in Sources */,
 				CEABFFF62B73388A004DA6E6 /* TestProfileAppApp.swift in Sources */,
 				CEAB00222B76CC58004DA6E6 /* AccountView.swift in Sources */,
+				CEAB00572B7C4AEF004DA6E6 /* AlertButtonTintColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

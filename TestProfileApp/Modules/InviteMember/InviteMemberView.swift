@@ -115,3 +115,9 @@ struct InviteMemberView: View {
         .navigationViewStyle(StackNavigationViewStyle())
     }
 }
+
+
+
+#Preview {
+    InviteMemberView()
+}

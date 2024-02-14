@@ -11,6 +11,10 @@ struct ContentView: View {
     
     @State var presentProfileMenuView = false
     
+    init() {
+        UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = UIColor.systemTeal
+    }
+    
     var body: some View {
         if UIDevice.current.userInterfaceIdiom == .pad {
             

@@ -46,3 +46,9 @@ struct OrganizationView: View {
         .contentMargins(.vertical, 8)
     }
 }
+
+
+
+#Preview {
+    OrganizationView(profileData: ProfileData())
+}
