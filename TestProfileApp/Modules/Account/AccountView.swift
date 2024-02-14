@@ -73,10 +73,6 @@ struct AccountView: View {
             }
             .listSectionSpacing(12)
             .contentMargins(.vertical, 12)
-            
-            if updateState == .loading {
-                BaseLoadingView()
-            }
         }
         .navigationTitle("Account")
         .toolbarTitleDisplayMode(.inline)
@@ -90,8 +86,12 @@ struct AccountView: View {
                     
                     //MARK: - Turn On Editting Mode
                 }) {
-                    Text(isEditing ? "Done" : "Edit")
-                        .font(.system(size: 17, weight: isEditing ? .semibold : .regular))
+                    if updateState == .loading {
+                        ProgressView()
+                    } else {
+                        Text(isEditing ? "Done" : "Edit")
+                            .font(.system(size: 17, weight: isEditing ? .semibold : .regular))
+                    }
                 }
             }
         }

@@ -145,10 +145,6 @@ struct MemberDetailView: View {
             }
             .listSectionSpacing(8)
             .contentMargins(.vertical, 2)
-            
-            if updateState == .loading {
-                BaseLoadingView()
-            }
         }
         .navigationTitle("Member")
         .toolbarTitleDisplayMode(.inline)
@@ -163,8 +159,12 @@ struct MemberDetailView: View {
                     
                     //MARK: - Turn On Editting Mode
                 }) {
-                    Text(isEditing ? "Done" : "Edit")
-                        .font(.system(size: 17, weight: isEditing ? .semibold : .regular))
+                    if updateState == .loading {
+                        ProgressView()
+                    } else {
+                        Text(isEditing ? "Done" : "Edit")
+                            .font(.system(size: 17, weight: isEditing ? .semibold : .regular))
+                    }
                 }
             }
         }
